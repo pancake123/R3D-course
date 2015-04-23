@@ -11,5 +11,6 @@
 
 </body>
 <script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+<script type="text/javascript" src="js/three.js"></script>
 <script type="text/javascript" src="js/webgl.js"></script>
 </html>
