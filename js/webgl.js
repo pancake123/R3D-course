@@ -4,16 +4,21 @@ var container,
 	renderer,
 	floorMesh,
 	cubeMesh,
-	phi = 0;
+	phi = 0,
+	width,
+	height;
 
-var init = function() {
+var init = function(w, h) {
+
+	width = w || window.innerWidth;
+	height = h || window.innerHeight;
 
 	container = $("<div>", {
 		id: "container"
 	}).appendTo("body");
 
-	camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight,
-		1, 10000
+	camera = new THREE.PerspectiveCamera(
+		45, width / height, 1, 10000
 	);
 	camera.position.z = 250;
 	camera.position.y = 0;
@@ -43,7 +48,7 @@ var init = function() {
 	scene.add(cubeMesh);
 
 	renderer = new THREE.WebGLRenderer();
-	renderer.setSize(window.innerWidth, window.innerHeight);
+	renderer.setSize(width, height);
 	container.append(renderer.domElement);
 };
 
@@ -56,7 +61,7 @@ var render = function() {
 	cubeMesh.position.x = Math.sin( phi ) * 50;
 	cubeMesh.position.y = Math.cos( phi ) * 50;
 	//итерируем глобальную переменную
-	phi+= 0.05;
+	phi += 0.05;
 	//рендерим
 	renderer.render(scene, camera);
 };
@@ -65,7 +70,7 @@ var timer = function() {
 	render();
 	setTimeout(function() {
 		timer();
-	}, 10);
+	}, 15);
 };
 
 $(document).ready(function() {
