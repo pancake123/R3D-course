@@ -6,19 +6,31 @@ var container,
 	cubeMesh,
 	phi = 0,
 	width,
-	height;
+	height,
+	fov;
 
-var init = function(w, h) {
+var createCamera = function(fov) {
+	camera = new THREE.PerspectiveCamera(
+		fov || 45, width / height, 1, 10000
+	);
+	camera.position.z = 250;
+	camera.position.y = 0;
+	return camera;
+};
 
-	width = w || window.innerWidth;
-	height = h || window.innerHeight;
+var init = function(wrapper) {
+
+	width = $(wrapper).width();
+	height = $(wrapper).height();
+
+	console.log(height);
 
 	container = $("<div>", {
 		id: "container"
-	}).appendTo("body");
+	}).appendTo(wrapper);
 
 	camera = new THREE.PerspectiveCamera(
-		45, width / height, 1, 10000
+		fov = 45, width / height, 1, 10000
 	);
 	camera.position.z = 250;
 	camera.position.y = 0;
@@ -73,7 +85,16 @@ var timer = function() {
 	}, 15);
 };
 
+var changePerspective = function(angle) {
+	fov = angle;
+	createCamera(angle);
+	$("#perspective").text(fov);
+};
+
+var KEY_LEFT = 37;
+var KEY_RIGHT = 39;
+
 $(document).ready(function() {
-	init();
+	init("#scene");
 	timer();
 });

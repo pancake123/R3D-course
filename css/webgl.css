@@ -1,7 +1,21 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
 
 body {
-    background-color: black;
+    background-color: grey;
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+
+.clear {
+    margin: 0;
+    padding: 0;
+}
+
+#scene {
+    height: 600px;
 }
