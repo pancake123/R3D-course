@@ -6,7 +6,7 @@
  * @var array $privileges
  */
 ?>
-<script type="text/javascript" src="/nastya/js/cabinet.js"></script>
+<script type="text/javascript" src="/r3d/js/cabinet.js"></script>
 <div class="col-xs-12">
     <div class="col-xs-12 text-center">
         <h1>Личный кабинет</h1>
@@ -48,7 +48,7 @@
                     <td><?php print $user["role_id"] ?></td>
                     <td>
                         <a class="glyphicon glyphicon-pencil user-edit-icon" data-id="<?= $user["id"] ?>" style="cursor: pointer"></a>
-                        <a href="/nastya/user/remove.php?id=<?= urlencode($user["id"]) ?>" class="glyphicon glyphicon-remove"></a>
+                        <a href="/r3d/user/remove.php?id=<?= urlencode($user["id"]) ?>" class="glyphicon glyphicon-remove"></a>
                     </td>
                 </tr>
             <?php endforeach ?>
@@ -81,7 +81,7 @@
                     <td><?php print $role["name"] ?></td>
                     <td>
                         <a class="glyphicon glyphicon-pencil role-edit-icon" data-id="<?= $role["id"] ?>" style="cursor: pointer"></a>
-                        <a href="/nastya/role/remove.php?id=<?= urlencode($role["id"]) ?>" class="glyphicon glyphicon-remove"></a>
+                        <a href="/r3d/role/remove.php?id=<?= urlencode($role["id"]) ?>" class="glyphicon glyphicon-remove"></a>
                     </td>
                 </tr>
             <?php endforeach ?>
@@ -114,7 +114,7 @@
                     <td><?php print $privilege["name"] ?></td>
                     <td>
                         <a class="glyphicon glyphicon-pencil privilege-edit-icon" data-id="<?= $privilege["id"] ?>" style="cursor: pointer"></a>
-                        <a href="/nastya/privilege/remove.php?id=<?= urlencode($privilege["id"]) ?>" class="glyphicon glyphicon-remove"></a>
+                        <a href="/r3d/privilege/remove.php?id=<?= urlencode($privilege["id"]) ?>" class="glyphicon glyphicon-remove"></a>
                     </td>
                 </tr>
             <?php endforeach ?>
@@ -136,7 +136,7 @@
         <a href="logout.php" class="btn btn-danger">Выйти</a>
     </div>
 </div>
-<form method="post" action="/nastya/role/create.php">
+<form method="post" action="/r3d/role/create.php">
     <div class="modal fade" id="register-role-modal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -182,7 +182,7 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 </form>
-<form method="post" action="/nastya/role/update.php">
+<form method="post" action="/r3d/role/update.php">
     <div class="modal fade" id="update-role-modal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -228,7 +228,7 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 </form>
-<form method="post" action="/nastya/privilege/create.php">
+<form method="post" action="/r3d/privilege/create.php">
 <div class="modal fade" id="register-privilege-modal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -262,7 +262,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 </form>
-<form method="post" action="/nastya/privilege/update.php">
+<form method="post" action="/r3d/privilege/update.php">
     <div class="modal fade" id="update-privilege-modal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -296,7 +296,7 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 </form>
-<form method="post" action="/nastya/user/create.php">
+<form method="post" action="/r3d/user/create.php">
     <div class="modal fade" id="register-user-modal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -358,7 +358,7 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 </form>
-<form method="post" action="/nastya/user/update.php">
+<form method="post" action="/r3d/user/update.php">
     <div class="modal fade" id="update-user-modal">
         <div class="modal-dialog">
             <div class="modal-content">

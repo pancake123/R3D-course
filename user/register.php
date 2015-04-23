@@ -29,7 +29,7 @@ function showMessages($redirect = true) {
         return ;
     }
     if ($redirect) {
-        header("Location: /nastya", true, 301);
+        header("Location: /r3d", true, 301);
     }
     die();
 }

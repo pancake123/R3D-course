@@ -18,10 +18,10 @@ class Layout {
         extract($params);
         unset($params);
         ob_start();
-        require $_SERVER["DOCUMENT_ROOT"]."/nastya/".$path;
+        require $_SERVER["DOCUMENT_ROOT"]."/r3d/".$path;
         $content = ob_get_clean();
-        $url = "/nastya/";
-        require $_SERVER["DOCUMENT_ROOT"]."/nastya/layouts/".$layout.".php";
+        $url = "/r3d/";
+        require $_SERVER["DOCUMENT_ROOT"]."/r3d/layouts/".$layout.".php";
     }
 
     private static $layoutManager = null;

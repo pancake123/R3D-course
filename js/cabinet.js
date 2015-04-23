@@ -2,7 +2,7 @@
 $(document).ready(function() {
     $(".role-edit-icon").click(function () {
         var modal = $("#update-role-modal");
-        $.get("/nastya/role/fetch.php", {
+        $.get("/r3d/role/fetch.php", {
             id: $(this).attr("data-id")
         }, function(json) {
             var role = json["role"];
@@ -21,7 +21,7 @@ $(document).ready(function() {
     });
     $(".privilege-edit-icon").click(function() {
         var modal = $("#update-privilege-modal");
-        $.get("/nastya/privilege/fetch.php", {
+        $.get("/r3d/privilege/fetch.php", {
             id: $(this).attr("data-id")
         }, function(json) {
             var privilege = json["privilege"];
@@ -33,7 +33,7 @@ $(document).ready(function() {
     });
      $(".user-edit-icon").click(function() {
          var modal = $("#update-user-modal");
-         $.get("/nastya/user/fetch.php", {
+         $.get("/r3d/user/fetch.php", {
              id: $(this).attr("data-id")
          }, function(json) {
              var user = json["user"];

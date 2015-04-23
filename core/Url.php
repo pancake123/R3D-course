@@ -17,9 +17,9 @@ class Url {
     }
 
     public function redirect($path = "", $exit = true) {
-        header("location: /nastya/".$path, true, 301);
+        header("location: /r3d/".$path, true, 301);
         if ($exit) {
-            die;
+            die();
         }
     }
 
@@ -30,5 +30,4 @@ class Url {
     }
 
     private static $instance = null;
-
 }
