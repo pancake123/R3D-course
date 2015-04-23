@@ -13,8 +13,8 @@
 	<div class="col-xs-4 clear text-center">
 		<h3>Перспектива: <b><span id="perspective">45</span>&deg;</b></h3>
 		<div class="btn-group">
-			<button class="btn btn-primary glyphicon glyphicon-minus" onclick="changePerspective(fov - 10)"></button>
-			<button class="btn btn-primary glyphicon glyphicon-plus" onclick="changePerspective(fov + 10)"></button>
+			<button class="btn btn-primary glyphicon glyphicon-minus" onclick="changePerspective(fov - 5)"></button>
+			<button class="btn btn-primary glyphicon glyphicon-plus" onclick="changePerspective(fov + 5)"></button>
 		</div>
 	</div>
 </div>
