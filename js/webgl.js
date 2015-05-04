@@ -9,21 +9,10 @@ var container,
 	height,
 	fov;
 
-var createCamera = function(fov) {
-	camera = new THREE.PerspectiveCamera(
-		fov || 45, width / height, 1, 10000
-	);
-	camera.position.z = 250;
-	camera.position.y = 0;
-	return camera;
-};
-
 var init = function(wrapper) {
 
 	width = $(wrapper).width();
 	height = $(wrapper).height();
-
-	console.log(height);
 
 	container = $("<div>", {
 		id: "container"
@@ -34,17 +23,6 @@ var init = function(wrapper) {
 	);
 	camera.position.z = 250;
 	camera.position.y = 0;
-
-	scene = new THREE.Scene();
-
-	floorMesh = new THREE.Mesh(new THREE.BoxGeometry(600, 600, 5),
-		new THREE.MeshBasicMaterial({
-			color: 0x248C0F,
-			opacity: 0.9
-		}));
-	floorMesh.position.y = 500;
-	floorMesh.rotation.x = 90 * Math.PI / 180;
-	scene.add(floorMesh);
 
 	var cube = new THREE.BoxGeometry(50, 50, 50, 1, 1, 1);
 	cubeMesh = new THREE.Mesh(cube, new THREE.MeshFaceMaterial([
@@ -57,6 +35,8 @@ var init = function(wrapper) {
 		new THREE.MeshBasicMaterial( { color: 0xB5B1AE }) // задняя сторона
 	]));
 	cubeMesh.position.y = 500;
+
+	scene = new THREE.Scene();
 	scene.add(cubeMesh);
 
 	renderer = new THREE.WebGLRenderer();
@@ -65,15 +45,22 @@ var init = function(wrapper) {
 };
 
 var render = function() {
+
 	//вращаем куб по всем трем осям (переменная мэша куба доступна глобально)
 	cubeMesh.rotation.x += 0.5 * Math.PI / 90;
 	cubeMesh.rotation.y += 1.0 * Math.PI / 90;
 	cubeMesh.rotation.z += 1.5 * Math.PI / 90;
+
 	//двигаем куб по кругу, изменяя координаты его позиции по осям x и y
 	cubeMesh.position.x = Math.sin( phi ) * 50;
 	cubeMesh.position.y = Math.cos( phi ) * 50;
+
 	//итерируем глобальную переменную
 	phi += 0.05;
+
+	camera.fov = fov;
+	camera.updateProjectionMatrix();
+
 	//рендерим
 	renderer.render(scene, camera);
 };
@@ -87,7 +74,6 @@ var timer = function() {
 
 var changePerspective = function(angle) {
 	fov = angle;
-	createCamera(angle);
 	$("#perspective").text(fov);
 };
 
