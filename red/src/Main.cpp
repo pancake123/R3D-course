@@ -64,25 +64,6 @@ void render() {
 
 int main(int argc, char** argv) {
 
-	//glm::mat4x4 matrix(
-	//	2.40, 0, 0, 0,
-	//	0, 4.0, 0, 0,
-	//	0, 0, -1.0, -1.0,
-	//	0, 0, -8.02, 0
-	//);
-
-	//glm::mat4x4 result = glm::inverse(matrix);
-
-	//for (int i = 0; i < 4; i++) {
-	//	glm::vec4 vec = result[i];
-	//	for (int j = 0; j < 4; j++) {
-	//		std::cout << vec[j] << " ";
-	//	}
-	//	std::cout << std::endl;
-	//}
-
-	//return 0;
-
 	if (!glfwInit()) {
 		return -1;
 	}
@@ -104,17 +85,6 @@ int main(int argc, char** argv) {
 		if (key == GLFW_KEY_ESCAPE) {
 			glfwSetWindowShouldClose(window, GL_TRUE);
 		}
-		else if (key == GLFW_KEY_SPACE) {
-			GLfloat matrix[16];
-			glGetFloatv(GL_PROJECTION_MATRIX, matrix);
-			for (int i = 0; i < 4; i++) {
-				for (int j = 0; j < 4; j++) {
-					printf("%.2f ", matrix[i * 4 + j]);
-				}
-				printf("\n");
-			}
-			printf("\n");
-		}
 	});
 
 	glfwSetWindowRefreshCallback(window, [] (GLFWwindow* window) {
@@ -135,8 +105,12 @@ int main(int argc, char** argv) {
 	});
 
 	camera.create(Vertex(150, 50, 400), Vertex(0, 0, 0));
-
+	
+#ifdef __APPLE_CC__
+	car.load("/static/models/moskvitch/moskvitch.obj");
+#else
 	car.load("../../static/models/moskvitch/moskvitch.obj");
+#endif
 
 	glfwWindowHint(GLFW_DEPTH_BITS, 32);
 	glEnable(GL_DEPTH_TEST);
