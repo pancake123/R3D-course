@@ -26,7 +26,12 @@
 #  define CALLBACK __stdcall
 #endif
 
-#include <gl/gl.h>
-#include <gl/glu.h>
+#ifdef __APPLE_CC__
+#  include <OpenGL/gl.h>
+#  include <OpenGL/glu.h>
+#else
+#  include <gl/gl.h>
+#  include <gl/glu.h>
+#endif
 
 #endif // ~__RED__DEFINE__

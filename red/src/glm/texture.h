@@ -4,8 +4,11 @@
 //#include "MainHeader.h"
 //#include "TextureHeader.h"
 
-#include <windows.h>
-#include <windowsx.h>
+#ifdef _WIN32
+#  include <windows.h>
+#  include <windowsx.h>
+#endif
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -23,8 +26,13 @@
 #  define CALLBACK __stdcall
 #endif
 
-#include <gl/gl.h>
-#include <gl/glu.h>
+#ifdef __APPLE_CC__
+#  include <OpenGL/gl.h>
+#  include <OpenGL/glu.h>
+#else
+#  include <gl/gl.h>
+#  include <gl/glu.h>
+#endif
 
 #include <math.h>
 

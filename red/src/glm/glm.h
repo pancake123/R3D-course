@@ -31,8 +31,13 @@
 #  define CALLBACK __stdcall
 #endif
 
-#include <gl/gl.h>
-#include <gl/glu.h>
+#ifdef __APPLE_CC__
+#  include <OpenGL/gl.h>
+#  include <OpenGL/glu.h>
+#else
+#  include <gl/gl.h>
+#  include <gl/glu.h>
+#endif
 
 #ifndef M_PI
 	#define M_PI 3.14159265f

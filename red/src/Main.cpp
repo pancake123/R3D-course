@@ -26,7 +26,7 @@ GLvoid frustum(GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat
 		0, 0, -1, 0
 	);
 
-	glLoadMatrixf((const GLfloat*)&glm::transpose(matrix));
+//	glLoadMatrixf((const GLfloat*)&glm::transpose(matrix));
 }
 
 GLvoid perspective(GLfloat fov, GLfloat aspectRatio, GLfloat near, GLfloat far) {

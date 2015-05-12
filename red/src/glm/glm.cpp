@@ -20,6 +20,9 @@
 #include <assert.h>
 #include "glm.h"
 
+#ifdef __APPLE_CC__
+#  define _strdup strdup
+#endif
 
 //#define DebugVisibleSurfaces
 
