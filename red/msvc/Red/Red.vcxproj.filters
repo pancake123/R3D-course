@@ -7,6 +7,9 @@
     <Filter Include="red">
       <UniqueIdentifier>{96068508-a62f-497f-824f-b290f74487c8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="algorithms">
+      <UniqueIdentifier>{fde8bec6-da66-4939-90f1-69409310291c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\glm\glm.h">
@@ -30,6 +33,33 @@
     <ClInclude Include="..\..\src\Vertex.h">
       <Filter>red</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Algorithm.h">
+      <Filter>red</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Strategy.h">
+      <Filter>red</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\algorithms\DoublePointAlgorithm.h">
+      <Filter>algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\algorithms\LinearAlgorithm.h">
+      <Filter>algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\algorithms\ReverseAlgorithm.h">
+      <Filter>algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\algorithms\SinglePointAlgorithm.h">
+      <Filter>algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\algorithms\SphereAlgorithm.h">
+      <Filter>algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\algorithms\TriplePointAlgorithm.h">
+      <Filter>algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\AlgorithmCollection.h">
+      <Filter>red</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\glm\glm.cpp">
@@ -51,6 +81,18 @@
       <Filter>red</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Vertex.cpp">
+      <Filter>red</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Point.cpp">
+      <Filter>red</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Strategy.cpp">
+      <Filter>red</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\AlgorithmCollection.cpp">
+      <Filter>red</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Algorithm.cpp">
       <Filter>red</Filter>
     </ClCompile>
   </ItemGroup>

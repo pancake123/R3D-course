@@ -1,12 +1,17 @@
 #include "Define.h"
+#include "Algorithm.h"
+#include "AlgorithmCollection.h"
 #include "Model.h"
 #include "Point.h"
 #include "Vertex.h"
 #include "Camera.h"
 
-#include "glfw/glfw3.h"
-#include "math/glm.hpp"
-#include "math/gtc/matrix_transform.hpp"
+#include "algorithms\DoublePointAlgorithm.h"
+#include "algorithms\LinearAlgorithm.h"
+#include "algorithms\ReverseAlgorithm.h"
+#include "algorithms\SinglePointAlgorithm.h"
+#include "algorithms\SphereAlgorithm.h"
+#include "algorithms\TriplePointAlgorithm.h"
 
 #include <iostream>
 
@@ -14,6 +19,7 @@
 #define HEIGHT 768
 
 Camera camera;
+Algorithm* algorithm;
 Model car;
 Model chair;
 
@@ -26,7 +32,7 @@ GLvoid frustum(GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat
 		0, 0, -1, 0
 	);
 
-//	glLoadMatrixf((const GLfloat*)&glm::transpose(matrix));
+	glLoadMatrixf((const GLfloat*)&glm::transpose(matrix));
 }
 
 GLvoid perspective(GLfloat fov, GLfloat aspectRatio, GLfloat near, GLfloat far) {
@@ -40,6 +46,7 @@ GLvoid perspective(GLfloat fov, GLfloat aspectRatio, GLfloat near, GLfloat far) 
 GLvoid reverse(GLfloat fov, GLfloat aspectRatio, GLfloat near, GLfloat far) {
 
 	perspective(fov, aspectRatio, far, near);
+	camera.lookAt();
 	glScalef(-1, 1, 1);
 	glTranslatef(0, 0, -(far - near) / 2);
 	glRotatef(180.0, 0, 1, 0);
@@ -48,21 +55,39 @@ GLvoid reverse(GLfloat fov, GLfloat aspectRatio, GLfloat near, GLfloat far) {
 
 void render() {
 
-	GLfloat native[16];
-
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	reverse(45, 4.0 / 3.0, 1, 1000);
+	glLoadIdentity();	
+
+	//reverse(45, 4.0 / 3.0, 1, 2000);
 
 	camera.keyboard(10);
-	camera.lookAt();
+	algorithm->load();
+	//camera.lookAt();
 
 	car.render();
+
+	glPushMatrix();
+	glTranslatef(0, 0, -500);
+	car.render();
+	glPopMatrix();
 }
 
 int main(int argc, char** argv) {
+
+	AlgorithmCollection* algorithms = AlgorithmCollection::getCollection();
+
+	algorithms->insert(Strategy::R_STRATEGY_DOUBLE_POINT, new algorithms::DoublePointAlgorithm());
+	algorithms->insert(Strategy::R_STRATEGY_LINEAR, new algorithms::LinearAlgorithm());
+	algorithms->insert(Strategy::R_STRATEGY_REVERSE, new algorithms::ReverseAlgorithm());
+	algorithms->insert(Strategy::R_STRATEGY_SINGLE_POINT, new algorithms::SinglePointAlgorithm());
+	algorithms->insert(Strategy::R_STRATEGY_SPHERE, new algorithms::SphereAlgorithm());
+	algorithms->insert(Strategy::R_STRATEGY_TRIPLE_POINT, new algorithms::TriplePointAlgorithm());
+
+	algorithms->camera(&camera);
+
+	algorithm = algorithms->find(Strategy::R_STRATEGY_LINEAR);
 
 	if (!glfwInit()) {
 		return -1;
@@ -78,12 +103,34 @@ int main(int argc, char** argv) {
 	glfwSetWindowPos(window, 800, 100);
 	glfwMakeContextCurrent(window);
 
-	glfwSetKeyCallback(window, [] (GLFWwindow* window, int key, int code, int action, int mod) {
+	glfwSetKeyCallback(window, [](GLFWwindow* window, int key, int code, int action, int mod) {
 		if (action == GLFW_RELEASE) {
 			return;
 		}
 		if (key == GLFW_KEY_ESCAPE) {
 			glfwSetWindowShouldClose(window, GL_TRUE);
+		}
+		switch (char(key)) {
+		case '1':
+			algorithm = AlgorithmCollection::getCollection()->find(Strategy::R_STRATEGY_DOUBLE_POINT);
+			break;
+		case '2':
+			algorithm = AlgorithmCollection::getCollection()->find(Strategy::R_STRATEGY_LINEAR);
+			break;
+		case '3':
+			algorithm = AlgorithmCollection::getCollection()->find(Strategy::R_STRATEGY_REVERSE);
+			break;
+		case '4':
+			algorithm = AlgorithmCollection::getCollection()->find(Strategy::R_STRATEGY_SINGLE_POINT);
+			break;
+		case '5':
+			algorithm = AlgorithmCollection::getCollection()->find(Strategy::R_STRATEGY_SPHERE);
+			break;
+		case '6':
+			algorithm = AlgorithmCollection::getCollection()->find(Strategy::R_STRATEGY_TRIPLE_POINT);
+			break;
+		default:
+			break;
 		}
 	});
 

@@ -34,4 +34,8 @@
 #  include <gl/glu.h>
 #endif
 
+#include "glfw/glfw3.h"
+#include "math/glm.hpp"
+#include "math/gtc/matrix_transform.hpp"
+
 #endif // ~__RED__DEFINE__
