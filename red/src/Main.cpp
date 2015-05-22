@@ -6,12 +6,12 @@
 #include "Vertex.h"
 #include "Camera.h"
 
-#include "algorithms\DoublePointAlgorithm.h"
-#include "algorithms\LinearAlgorithm.h"
-#include "algorithms\ReverseAlgorithm.h"
-#include "algorithms\SinglePointAlgorithm.h"
-#include "algorithms\SphereAlgorithm.h"
-#include "algorithms\TriplePointAlgorithm.h"
+#include "algorithms/DoublePointAlgorithm.h"
+#include "algorithms/LinearAlgorithm.h"
+#include "algorithms/ReverseAlgorithm.h"
+#include "algorithms/SinglePointAlgorithm.h"
+#include "algorithms/SphereAlgorithm.h"
+#include "algorithms/TriplePointAlgorithm.h"
 
 #include <iostream>
 
@@ -22,6 +22,8 @@ Camera camera;
 Algorithm* algorithm;
 Model car;
 Model chair;
+int key = 0;
+static int keyboard[0xFF] = { 0 };
 
 GLvoid frustum(GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat near, GLfloat far) {
 	
@@ -32,7 +34,8 @@ GLvoid frustum(GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat
 		0, 0, -1, 0
 	);
 
-	glLoadMatrixf((const GLfloat*)&glm::transpose(matrix));
+    auto t = glm::transpose(matrix);
+	glLoadMatrixf((const GLfloat*)&t);
 }
 
 GLvoid perspective(GLfloat fov, GLfloat aspectRatio, GLfloat near, GLfloat far) {
@@ -58,15 +61,18 @@ void render() {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();	
+	glLoadIdentity();
+    
+    // Ok, i'll fix it later
 
 	//reverse(45, 4.0 / 3.0, 1, 2000);
 
-	camera.keyboard(10);
+	camera.keyboard(10, key, keyboard[key]);
 	algorithm->load();
 	//camera.lookAt();
 
 	car.render();
+    std::cout << keyboard['a'] << std::endl;
 
 	glPushMatrix();
 	glTranslatef(0, 0, -500);
@@ -100,7 +106,7 @@ int main(int argc, char** argv) {
 		return -1;
 	}
 
-	glfwSetWindowPos(window, 800, 100);
+	glfwSetWindowPos(window, 400, 100);
 	glfwMakeContextCurrent(window);
 
 	glfwSetKeyCallback(window, [](GLFWwindow* window, int key, int code, int action, int mod) {
@@ -132,6 +138,8 @@ int main(int argc, char** argv) {
 		default:
 			break;
 		}
+        ::keyboard[key] = (action == GLFW_PRESS ? true : false);
+        ::key = key;
 	});
 
 	glfwSetWindowRefreshCallback(window, [] (GLFWwindow* window) {
@@ -148,13 +156,13 @@ int main(int argc, char** argv) {
 	});
 
 	glfwSetCursorPosCallback(window, [] (GLFWwindow* window, double x, double y) {
-		camera.mouse(Point(int(x), -int(y)), true);
+		camera.mouse(Point(int(x), -int(y)), false);
 	});
 
 	camera.create(Vertex(150, 50, 400), Vertex(0, 0, 0));
 	
 #ifdef __APPLE_CC__
-	car.load("/static/models/moskvitch/moskvitch.obj");
+	car.load("../../../../static/models/moskvitch/moskvitch.obj");
 #else
 	car.load("../../static/models/moskvitch/moskvitch.obj");
 #endif

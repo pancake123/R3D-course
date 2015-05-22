@@ -1,5 +1,5 @@
-dependencies: /Users/lovelyowl/PHP/r3d/red/src/Vertex.cpp \
-  /Users/lovelyowl/PHP/r3d/red/src/Vertex.h \
+dependencies: /Users/lovelyowl/PHP/r3d/red/src/Algorithm.cpp \
+  /Users/lovelyowl/PHP/r3d/red/src/Algorithm.h \
   /Users/lovelyowl/PHP/r3d/red/src/Define.h \
   /Users/lovelyowl/PHP/r3d/red/src/glfw/glfw3.h \
   /Users/lovelyowl/PHP/r3d/red/src/math/glm.hpp \
@@ -79,4 +79,8 @@ dependencies: /Users/lovelyowl/PHP/r3d/red/src/Vertex.cpp \
   /Users/lovelyowl/PHP/r3d/red/src/math/gtc/matrix_transform.hpp \
   /Users/lovelyowl/PHP/r3d/red/src/math/gtc/../gtc/constants.hpp \
   /Users/lovelyowl/PHP/r3d/red/src/math/gtc/constants.inl \
-  /Users/lovelyowl/PHP/r3d/red/src/math/gtc/matrix_transform.inl
+  /Users/lovelyowl/PHP/r3d/red/src/math/gtc/matrix_transform.inl \
+  /Users/lovelyowl/PHP/r3d/red/src/Strategy.h \
+  /Users/lovelyowl/PHP/r3d/red/src/Camera.h \
+  /Users/lovelyowl/PHP/r3d/red/src/Point.h \
+  /Users/lovelyowl/PHP/r3d/red/src/Vertex.h

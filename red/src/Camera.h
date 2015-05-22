@@ -18,7 +18,7 @@ public:
 	void rotate(float angle, float x, float y, float z);
 	void move(float velocity);
 	void lookAt(void);
-	void keyboard(float velocity);
+	void keyboard(float velocity, int key = 0, bool pressed = false);
 	void mouse(const Point& mouse, bool center = 1);
 	void strafe(float velocity);
 } *CameraP;

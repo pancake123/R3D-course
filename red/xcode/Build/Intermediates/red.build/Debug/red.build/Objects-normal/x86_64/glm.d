@@ -1,2 +1,2 @@
-dependencies: /Volumes/Storage/hosts/r3d/red/src/glm/glm.cpp \
-  /Volumes/Storage/hosts/r3d/red/src/glm/glm.h
+dependencies: /Users/lovelyowl/PHP/r3d/red/src/glm/glm.cpp \
+  /Users/lovelyowl/PHP/r3d/red/src/glm/glm.h

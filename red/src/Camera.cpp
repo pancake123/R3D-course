@@ -84,7 +84,7 @@ void Camera::lookAt(void) {
 	);
 }
 
-void Camera::keyboard(float velocity) {
+void Camera::keyboard(float velocity, int key, bool pressed) {
 
 #ifdef _WIN32
 	if ((GetKeyState('W') & 0x80) == 0x80) {
@@ -99,6 +99,19 @@ void Camera::keyboard(float velocity) {
 	if ((GetKeyState('D') & 0x80) == 0x80) {
 		this->strafe(velocity);
 	}
+#else
+    if (key == 'w' && pressed) {
+        this->move(velocity);
+    }
+    if (key == 's' && pressed) {
+        this->move(-velocity);
+    }
+    if (key == 'a' && pressed) {
+        this->strafe(-velocity);
+    }
+    if (key == 'd' && pressed) {
+        this->strafe(velocity);
+    }
 #endif
 }
 

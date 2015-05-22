@@ -1,5 +1,5 @@
-dependencies: /Users/lovelyowl/PHP/r3d/red/src/Vertex.cpp \
-  /Users/lovelyowl/PHP/r3d/red/src/Vertex.h \
+dependencies: /Users/lovelyowl/PHP/r3d/red/src/Strategy.cpp \
+  /Users/lovelyowl/PHP/r3d/red/src/Strategy.h \
   /Users/lovelyowl/PHP/r3d/red/src/Define.h \
   /Users/lovelyowl/PHP/r3d/red/src/glfw/glfw3.h \
   /Users/lovelyowl/PHP/r3d/red/src/math/glm.hpp \

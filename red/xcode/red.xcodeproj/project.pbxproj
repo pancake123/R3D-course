@@ -11,15 +11,18 @@
 		0A7D02341B027CDA00EDB89E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7D02331B027CDA00EDB89E /* Cocoa.framework */; };
 		0A7D02361B027CE100EDB89E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7D02351B027CE100EDB89E /* IOKit.framework */; };
 		0A7D02381B027CE700EDB89E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7D02371B027CE700EDB89E /* CoreVideo.framework */; };
-		0A7D023A1B027CF500EDB89E /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7D02391B027CF500EDB89E /* libglfw3.a */; };
-		0AD62A111B02706B00282FD1 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AD628FC1B02706A00282FD1 /* Camera.cpp */; };
-		0AD62A121B02706B00282FD1 /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AD629031B02706A00282FD1 /* glm.cpp */; };
-		0AD62A131B02706B00282FD1 /* glmimg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AD629051B02706A00282FD1 /* glmimg.cpp */; };
-		0AD62A141B02706B00282FD1 /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AD629061B02706A00282FD1 /* texture.cpp */; };
-		0AD62A151B02706B00282FD1 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AD629081B02706A00282FD1 /* Main.cpp */; };
-		0AD62A181B02706B00282FD1 /* Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AD62A0B1B02706B00282FD1 /* Model.cpp */; };
-		0AD62A191B02706B00282FD1 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AD62A0D1B02706B00282FD1 /* Point.cpp */; };
-		0AD62A1A1B02706B00282FD1 /* Vertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AD62A0F1B02706B00282FD1 /* Vertex.cpp */; };
+		B6A3683F1B0F696400352A12 /* Algorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A3682C1B0F696400352A12 /* Algorithm.cpp */; };
+		B6A368401B0F696400352A12 /* AlgorithmCollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A3682E1B0F696400352A12 /* AlgorithmCollection.cpp */; };
+		B6A368411B0F696400352A12 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A368311B0F696400352A12 /* Camera.cpp */; };
+		B6A368421B0F696400352A12 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A368361B0F696400352A12 /* Main.cpp */; };
+		B6A368431B0F696400352A12 /* Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A368371B0F696400352A12 /* Model.cpp */; };
+		B6A368441B0F696400352A12 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A368391B0F696400352A12 /* Point.cpp */; };
+		B6A368451B0F696400352A12 /* Strategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A3683B1B0F696400352A12 /* Strategy.cpp */; };
+		B6A368461B0F696400352A12 /* Vertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A3683D1B0F696400352A12 /* Vertex.cpp */; };
+		B6A368471B0F69B200352A12 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7D02391B027CF500EDB89E /* libglfw3.a */; };
+		B6A368511B0F6A3900352A12 /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A3684E1B0F6A3900352A12 /* glm.cpp */; };
+		B6A368521B0F6A3900352A12 /* glmimg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A3684F1B0F6A3900352A12 /* glmimg.cpp */; };
+		B6A368531B0F6A3900352A12 /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A368501B0F6A3900352A12 /* texture.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,23 +44,28 @@
 		0A7D02371B027CE700EDB89E /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		0A7D02391B027CF500EDB89E /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../lib/libglfw3.a; sourceTree = "<group>"; };
 		0A96FEB01B02700300C7B135 /* red */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = red; sourceTree = BUILT_PRODUCTS_DIR; };
-		0AD628FC1B02706A00282FD1 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = ../../src/Camera.cpp; sourceTree = "<group>"; };
-		0AD628FD1B02706A00282FD1 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Camera.h; path = ../../src/Camera.h; sourceTree = "<group>"; };
-		0AD628FE1B02706A00282FD1 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Define.h; path = ../../src/Define.h; sourceTree = "<group>"; };
-		0AD629001B02706A00282FD1 /* glfw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
-		0AD629011B02706A00282FD1 /* glfw3native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
-		0AD629031B02706A00282FD1 /* glm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = glm.cpp; sourceTree = "<group>"; };
-		0AD629041B02706A00282FD1 /* glm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glm.h; sourceTree = "<group>"; };
-		0AD629051B02706A00282FD1 /* glmimg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = glmimg.cpp; sourceTree = "<group>"; };
-		0AD629061B02706A00282FD1 /* texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = texture.cpp; sourceTree = "<group>"; };
-		0AD629071B02706A00282FD1 /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
-		0AD629081B02706A00282FD1 /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Main.cpp; path = ../../src/Main.cpp; sourceTree = "<group>"; };
-		0AD62A0B1B02706B00282FD1 /* Model.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Model.cpp; path = ../../src/Model.cpp; sourceTree = "<group>"; };
-		0AD62A0C1B02706B00282FD1 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = ../../src/Model.h; sourceTree = "<group>"; };
-		0AD62A0D1B02706B00282FD1 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Point.cpp; path = ../../src/Point.cpp; sourceTree = "<group>"; };
-		0AD62A0E1B02706B00282FD1 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Point.h; path = ../../src/Point.h; sourceTree = "<group>"; };
-		0AD62A0F1B02706B00282FD1 /* Vertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vertex.cpp; path = ../../src/Vertex.cpp; sourceTree = "<group>"; };
-		0AD62A101B02706B00282FD1 /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vertex.h; path = ../../src/Vertex.h; sourceTree = "<group>"; };
+		B6A3682C1B0F696400352A12 /* Algorithm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Algorithm.cpp; path = ../src/Algorithm.cpp; sourceTree = "<group>"; };
+		B6A3682D1B0F696400352A12 /* Algorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Algorithm.h; path = ../src/Algorithm.h; sourceTree = "<group>"; };
+		B6A3682E1B0F696400352A12 /* AlgorithmCollection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AlgorithmCollection.cpp; path = ../src/AlgorithmCollection.cpp; sourceTree = "<group>"; };
+		B6A3682F1B0F696400352A12 /* AlgorithmCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlgorithmCollection.h; path = ../src/AlgorithmCollection.h; sourceTree = "<group>"; };
+		B6A368301B0F696400352A12 /* algorithms */ = {isa = PBXFileReference; lastKnownFileType = folder; name = algorithms; path = ../src/algorithms; sourceTree = "<group>"; };
+		B6A368311B0F696400352A12 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = ../src/Camera.cpp; sourceTree = "<group>"; };
+		B6A368321B0F696400352A12 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Camera.h; path = ../src/Camera.h; sourceTree = "<group>"; };
+		B6A368331B0F696400352A12 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Define.h; path = ../src/Define.h; sourceTree = "<group>"; };
+		B6A368341B0F696400352A12 /* glfw */ = {isa = PBXFileReference; lastKnownFileType = folder; name = glfw; path = ../src/glfw; sourceTree = "<group>"; };
+		B6A368351B0F696400352A12 /* glm */ = {isa = PBXFileReference; lastKnownFileType = folder; name = glm; path = ../src/glm; sourceTree = "<group>"; };
+		B6A368361B0F696400352A12 /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Main.cpp; path = ../src/Main.cpp; sourceTree = "<group>"; };
+		B6A368371B0F696400352A12 /* Model.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Model.cpp; path = ../src/Model.cpp; sourceTree = "<group>"; };
+		B6A368381B0F696400352A12 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = ../src/Model.h; sourceTree = "<group>"; };
+		B6A368391B0F696400352A12 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Point.cpp; path = ../src/Point.cpp; sourceTree = "<group>"; };
+		B6A3683A1B0F696400352A12 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Point.h; path = ../src/Point.h; sourceTree = "<group>"; };
+		B6A3683B1B0F696400352A12 /* Strategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Strategy.cpp; path = ../src/Strategy.cpp; sourceTree = "<group>"; };
+		B6A3683C1B0F696400352A12 /* Strategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Strategy.h; path = ../src/Strategy.h; sourceTree = "<group>"; };
+		B6A3683D1B0F696400352A12 /* Vertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vertex.cpp; path = ../src/Vertex.cpp; sourceTree = "<group>"; };
+		B6A3683E1B0F696400352A12 /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vertex.h; path = ../src/Vertex.h; sourceTree = "<group>"; };
+		B6A3684E1B0F6A3900352A12 /* glm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = glm.cpp; path = ../src/glm/glm.cpp; sourceTree = "<group>"; };
+		B6A3684F1B0F6A3900352A12 /* glmimg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = glmimg.cpp; path = ../src/glm/glmimg.cpp; sourceTree = "<group>"; };
+		B6A368501B0F6A3900352A12 /* texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = texture.cpp; path = ../src/glm/texture.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A7D023A1B027CF500EDB89E /* libglfw3.a in Frameworks */,
+				B6A368471B0F69B200352A12 /* libglfw3.a in Frameworks */,
 				0A7D02381B027CE700EDB89E /* CoreVideo.framework in Frameworks */,
 				0A7D02361B027CE100EDB89E /* IOKit.framework in Frameworks */,
 				0A7D02341B027CDA00EDB89E /* Cocoa.framework in Frameworks */,
@@ -79,12 +87,15 @@
 		0A96FEA71B02700300C7B135 = {
 			isa = PBXGroup;
 			children = (
+				B6A3684E1B0F6A3900352A12 /* glm.cpp */,
+				B6A3684F1B0F6A3900352A12 /* glmimg.cpp */,
+				B6A368501B0F6A3900352A12 /* texture.cpp */,
+				B6A3682B1B0F695300352A12 /* src */,
 				0A7D02391B027CF500EDB89E /* libglfw3.a */,
 				0A7D02371B027CE700EDB89E /* CoreVideo.framework */,
 				0A7D02351B027CE100EDB89E /* IOKit.framework */,
 				0A7D02331B027CDA00EDB89E /* Cocoa.framework */,
 				0A7D02311B027CD400EDB89E /* OpenGL.framework */,
-				0A96FEB21B02700300C7B135 /* red */,
 				0A96FEB11B02700300C7B135 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,46 +108,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0A96FEB21B02700300C7B135 /* red */ = {
+		B6A3682B1B0F695300352A12 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				0AD628FC1B02706A00282FD1 /* Camera.cpp */,
-				0AD628FD1B02706A00282FD1 /* Camera.h */,
-				0AD628FE1B02706A00282FD1 /* Define.h */,
-				0AD628FF1B02706A00282FD1 /* glfw */,
-				0AD629021B02706A00282FD1 /* glm */,
-				0AD629081B02706A00282FD1 /* Main.cpp */,
-				0AD62A0B1B02706B00282FD1 /* Model.cpp */,
-				0AD62A0C1B02706B00282FD1 /* Model.h */,
-				0AD62A0D1B02706B00282FD1 /* Point.cpp */,
-				0AD62A0E1B02706B00282FD1 /* Point.h */,
-				0AD62A0F1B02706B00282FD1 /* Vertex.cpp */,
-				0AD62A101B02706B00282FD1 /* Vertex.h */,
+				B6A3682C1B0F696400352A12 /* Algorithm.cpp */,
+				B6A3682D1B0F696400352A12 /* Algorithm.h */,
+				B6A3682E1B0F696400352A12 /* AlgorithmCollection.cpp */,
+				B6A3682F1B0F696400352A12 /* AlgorithmCollection.h */,
+				B6A368301B0F696400352A12 /* algorithms */,
+				B6A368311B0F696400352A12 /* Camera.cpp */,
+				B6A368321B0F696400352A12 /* Camera.h */,
+				B6A368331B0F696400352A12 /* Define.h */,
+				B6A368341B0F696400352A12 /* glfw */,
+				B6A368351B0F696400352A12 /* glm */,
+				B6A368361B0F696400352A12 /* Main.cpp */,
+				B6A368371B0F696400352A12 /* Model.cpp */,
+				B6A368381B0F696400352A12 /* Model.h */,
+				B6A368391B0F696400352A12 /* Point.cpp */,
+				B6A3683A1B0F696400352A12 /* Point.h */,
+				B6A3683B1B0F696400352A12 /* Strategy.cpp */,
+				B6A3683C1B0F696400352A12 /* Strategy.h */,
+				B6A3683D1B0F696400352A12 /* Vertex.cpp */,
+				B6A3683E1B0F696400352A12 /* Vertex.h */,
 			);
-			path = red;
-			sourceTree = "<group>";
-		};
-		0AD628FF1B02706A00282FD1 /* glfw */ = {
-			isa = PBXGroup;
-			children = (
-				0AD629001B02706A00282FD1 /* glfw3.h */,
-				0AD629011B02706A00282FD1 /* glfw3native.h */,
-			);
-			name = glfw;
-			path = ../../src/glfw;
-			sourceTree = "<group>";
-		};
-		0AD629021B02706A00282FD1 /* glm */ = {
-			isa = PBXGroup;
-			children = (
-				0AD629031B02706A00282FD1 /* glm.cpp */,
-				0AD629041B02706A00282FD1 /* glm.h */,
-				0AD629051B02706A00282FD1 /* glmimg.cpp */,
-				0AD629061B02706A00282FD1 /* texture.cpp */,
-				0AD629071B02706A00282FD1 /* texture.h */,
-			);
-			name = glm;
-			path = ../../src/glm;
+			name = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,14 +190,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AD62A121B02706B00282FD1 /* glm.cpp in Sources */,
-				0AD62A1A1B02706B00282FD1 /* Vertex.cpp in Sources */,
-				0AD62A141B02706B00282FD1 /* texture.cpp in Sources */,
-				0AD62A131B02706B00282FD1 /* glmimg.cpp in Sources */,
-				0AD62A191B02706B00282FD1 /* Point.cpp in Sources */,
-				0AD62A181B02706B00282FD1 /* Model.cpp in Sources */,
-				0AD62A111B02706B00282FD1 /* Camera.cpp in Sources */,
-				0AD62A151B02706B00282FD1 /* Main.cpp in Sources */,
+				B6A368511B0F6A3900352A12 /* glm.cpp in Sources */,
+				B6A368521B0F6A3900352A12 /* glmimg.cpp in Sources */,
+				B6A368531B0F6A3900352A12 /* texture.cpp in Sources */,
+				B6A368451B0F696400352A12 /* Strategy.cpp in Sources */,
+				B6A368461B0F696400352A12 /* Vertex.cpp in Sources */,
+				B6A368441B0F696400352A12 /* Point.cpp in Sources */,
+				B6A3683F1B0F696400352A12 /* Algorithm.cpp in Sources */,
+				B6A368411B0F696400352A12 /* Camera.cpp in Sources */,
+				B6A368431B0F696400352A12 /* Model.cpp in Sources */,
+				B6A368421B0F696400352A12 /* Main.cpp in Sources */,
+				B6A368401B0F696400352A12 /* AlgorithmCollection.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +290,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Volumes/Storage/hosts/r3d/red/lib,
+					/Users/lovelyowl/PHP/r3d/red/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -303,6 +302,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Volumes/Storage/hosts/r3d/red/lib,
+					/Users/lovelyowl/PHP/r3d/red/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
