@@ -17,7 +17,7 @@ namespace algorithms {
 				this->aspect,
 				this->far,
 				this->near
-			) * this->getCameraMatrix();
+			);
 			mat = glm::scale(mat, glm::vec3({
 				-1.0f, 1.0f, 1.0f
 			}));

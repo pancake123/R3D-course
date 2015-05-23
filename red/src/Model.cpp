@@ -2,7 +2,7 @@
 
 Model::~Model() {
 	if (this->model) {
-		glmDelete(this->model);
+		//glmDelete(this->model);
 	}
 }
 

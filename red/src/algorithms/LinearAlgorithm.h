@@ -6,7 +6,7 @@
 namespace algorithms {
 	class LinearAlgorithm : public Algorithm {
 	public:
-		GLfloat fov = 45.0f;
+		GLfloat fov = 90.0f;
 		GLfloat aspect = 4.0f / 3.0f;
 		GLfloat near = 1.0f;
 		GLfloat far = 10000.0f;
@@ -18,7 +18,7 @@ namespace algorithms {
 				this->near,
 				this->far
 			);
-			return mat * this->getCameraMatrix();
+			return mat;
 		}
 	};
 }

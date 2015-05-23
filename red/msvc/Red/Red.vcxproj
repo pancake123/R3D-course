@@ -82,6 +82,7 @@
     <ClInclude Include="..\..\src\AlgorithmCollection.h" />
     <ClInclude Include="..\..\src\algorithms\DoublePointAlgorithm.h" />
     <ClInclude Include="..\..\src\algorithms\LinearAlgorithm.h" />
+    <ClInclude Include="..\..\src\algorithms\OrthogonalityAlgorithm.h" />
     <ClInclude Include="..\..\src\algorithms\ReverseAlgorithm.h" />
     <ClInclude Include="..\..\src\algorithms\SinglePointAlgorithm.h" />
     <ClInclude Include="..\..\src\algorithms\SphereAlgorithm.h" />

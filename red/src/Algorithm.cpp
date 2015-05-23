@@ -6,6 +6,9 @@ void Algorithm::load() {
 }
 
 Algorithm::Matrix Algorithm::getCameraMatrix(void) {
+	if (!this->camera) {
+		return glm::mat4x4(1.0f);
+	}
 	auto x = glm::vec3(
 		this->camera->_position.x,
 		this->camera->_position.y,

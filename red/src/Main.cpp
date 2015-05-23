@@ -12,6 +12,7 @@
 #include "algorithms/SinglePointAlgorithm.h"
 #include "algorithms/SphereAlgorithm.h"
 #include "algorithms/TriplePointAlgorithm.h"
+#include "algorithms/OrthogonalityAlgorithm.h"
 
 #include <iostream>
 
@@ -21,7 +22,6 @@
 Camera camera;
 Algorithm* algorithm;
 Model car;
-Model chair;
 int key = 0;
 static int keyboard[0xFF] = { 0 };
 
@@ -62,21 +62,35 @@ void render() {
 	glLoadIdentity();
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-    
-    // Ok, i'll fix it later
 
-	//reverse(45, 4.0 / 3.0, 1, 2000);
-
+#ifdef _WIN32
 	camera.keyboard(10, key, keyboard[key]);
-	algorithm->load();
-	//camera.lookAt();
+#else
+	camera.keyboard(10, key, keyboard[key]);
+#endif
 
-	car.render();
-    std::cout << keyboard['a'] << std::endl;
+	algorithm->load();
+
+	glm::mat4x4 matrix = algorithm->getMatrix();
 
 	glPushMatrix();
-	glTranslatef(0, 0, -500);
-	car.render();
+		glm::mat4x4 camera = algorithm->getCameraMatrix();
+		glMultMatrixf((GLfloat*)&camera);
+		glPushMatrix();
+			//algorithms::OrthogonalityAlgorithm o;
+			//o.left = -WIDTH / 2.0f;
+			//o.right = WIDTH / 2.0f;
+			//o.bottom = -HEIGHT / 2.0f;
+			//o.top = HEIGHT / 2.0f;
+			//o.camera = &camera;
+			glm::mat4x4 inverse = glm::inverse(matrix) * glm::perspective(45.0f, 4.0f / 3.0f, 1.0f, 10000.0f);
+			glMultMatrixf((GLfloat*)&inverse);
+			car.render();
+		glPopMatrix();
+		glPushMatrix();
+			glTranslatef(0, 0, -500);
+			car.render();
+		glPopMatrix();
 	glPopMatrix();
 }
 
@@ -90,6 +104,7 @@ int main(int argc, char** argv) {
 	algorithms->insert(Strategy::R_STRATEGY_SINGLE_POINT, new algorithms::SinglePointAlgorithm());
 	algorithms->insert(Strategy::R_STRATEGY_SPHERE, new algorithms::SphereAlgorithm());
 	algorithms->insert(Strategy::R_STRATEGY_TRIPLE_POINT, new algorithms::TriplePointAlgorithm());
+	algorithms->insert(Strategy::R_STRATEGY_ORTHOGONALITY, new algorithms::OrthogonalityAlgorithm());
 
 	algorithms->camera(&camera);
 
@@ -135,6 +150,9 @@ int main(int argc, char** argv) {
 		case '6':
 			algorithm = AlgorithmCollection::getCollection()->find(Strategy::R_STRATEGY_TRIPLE_POINT);
 			break;
+		case '7':
+			algorithm = AlgorithmCollection::getCollection()->find(Strategy::R_STRATEGY_ORTHOGONALITY);
+			break;
 		default:
 			break;
 		}
@@ -156,7 +174,11 @@ int main(int argc, char** argv) {
 	});
 
 	glfwSetCursorPosCallback(window, [] (GLFWwindow* window, double x, double y) {
+#ifdef _WIN32
+		camera.mouse(Point(int(x), -int(y)), true);
+#else
 		camera.mouse(Point(int(x), -int(y)), false);
+#endif
 	});
 
 	camera.create(Vertex(150, 50, 400), Vertex(0, 0, 0));
